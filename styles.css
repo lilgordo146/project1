@@ -1,43 +1,272 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garrett Comer</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<!-- Header including Garrett's name and high school -->
-<a href="index.html" class="home-button active">Home</a>
-<header id="header">
-    <h1>Garrett Comer</h1>
-    <p style="font-size: 14pt;">Skyline High School Class of 2027</p>
-    <nav>
-        <a href="grade9.html">Grade 9</a>
-        <a href="grade10.html">Grade 10</a>
-        <a href="grade11.html">Grade 11</a>
-    </nav>
-</header>
-<!-- Main content including race cards -->
-<main>
-    <div class="content-wrapper">
-        <img src="images/cover_photo.jpg" alt="Garrett holding Jackson Invitational runner-up trophy" class="bio-image">
-        <div class="bio-text">
-            <h2>About Garrett Comer</h2>
-            <p>Garrett is a junior on the Skyline XC team. After a mediocre freshman year and a devastating season-ending injury his sophomore year, 
-            Garrett was more determined than ever to run well. He was one of the most consistent runners on the team, getting that top-7 spot on 
-            the team every single race. He excelled in not just running but also motivating by always leading cheers and getting everyone hyped 
-            up while still staying positive. His favorite memories of the team were being at camp with everyone and playing games all day while 
-            still being full of energy. His favorite race was at Holly when their team placed first and went up on stage together with a big 
-            trophy.</p>
-            <h2>Awards</h2>
-            <p>DeWitt Invitational Team Champions (2024), Coaches Award, Top-50 Medal at Portage, Holly Team Winner</p>
-            <p><a href="https://www.athletic.net/athlete/21615274/cross-country/">View Athlete Profile</a></p>
-        </div>
-    </div>    
-</main>
-<!-- Footer showing where information was collected from -->
-<footer>
-    <p>Generated from <a href="https://docs.google.com/spreadsheets/d/1E5z5sSROgrBVfQeoR7W3uB8sPbZ6pSRWLBxRl7_Ggk0/edit?gid=156980597#gid=156980597" class="text-link">spreadsheet</a>.</p>
-    <p><a href="#header">Back to top</a></p>
-</footer>
-</html>
+/* ===== UNIVERSAL & BASE STYLES ===== */
+* {
+    font-family: "Verdana", sans-serif;
+    box-sizing: border-box;
+}
+
+header, body, footer {
+    background-color: #2c3e50; /* Deep slate blue */
+}
+
+/* ===== HEADER ===== */
+header {
+    position: relative;
+    color: #ecf0f1; /* Soft white */
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 30pt;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c; /* Warm coral/red */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #bdc3c7; /* Light gray text */
+}
+
+/* ===== MAIN CONTENT ===== */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ===== CARDS ===== */
+.card {
+    background: #fae4cd;
+    border-radius: 16px;
+    padding: 40px;
+    flex: 1 1 calc(33.333% - 14px); /* 3 cards per row */
+    min-width: 280px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e8e8e8;
+    transform: scale(1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* ===== BIO SECTION ===== */
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.content-wrapper img {
+    max-width: 500px;
+    height: auto;
+    border: 4px solid white;
+}
+
+.bio-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+    color: white;
+}
+
+.bio-text h2 {
+    font-size: 24pt;
+    margin-bottom: 10px;
+}
+
+.bio-text p {
+    font-size: 14pt;
+    line-height: 1.4;
+}
+
+/* ===== LINKS & BUTTONS ===== */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c; /* Warm coral/red */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+a.active {
+    background-color: #3498db; /* Bright blue for active */
+    cursor: default;
+}
+
+a.text-link {
+    display: inline;
+    padding: 0;
+    background-color: transparent;
+    color: #e74c3c;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.home-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablets - 2 cards per row */
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(50% - 10px);
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .content-wrapper img {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    a {
+        padding: 12px 24px;
+        font-size: 16pt;
+    }
+    
+    nav a {
+        padding: 12px 24px;
+        font-size: 18pt;
+    }
+    
+    .home-button {
+        padding: 12px 24px;
+        font-size: 18pt;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+/* Mobile - 1 card per row */
+@media (max-width: 768px) {
+    header {
+        margin-top: 25px;
+    }
+
+    header h1 {
+        font-size: 24pt;
+    }
+    
+    .card {
+        flex: 1 1 100%;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .content-wrapper img {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .bio-text {
+        max-width: 100%;
+    }
+    
+    .bio-text h2 {
+        font-size: 22pt;
+    }
+    
+    .bio-text p {
+        font-size: 10pt;
+    }
+
+    a {
+        padding: 9px 18px;
+        font-size: 10pt;
+    }
+    
+    nav a {
+        padding: 9px 18px;
+        font-size: 10pt;
+    }
+    
+    .home-button {
+        padding: 8px 16px;
+        font-size: 10pt;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+/* ===== HOVER EFFECTS (Desktop Only) ===== */
+@media (hover: hover) {
+    .card:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+    
+    nav a:hover {
+        background-color: #c0392b;
+    }
+    
+    a:hover {
+        background-color: #c0392b;
+    }
+    
+    .home-button:hover {
+        background-color: #c0392b;
+    }
+    
+    a.active:hover {
+        background-color: #3498db;
+    }
+    
+    a.text-link:hover {
+        background-color: transparent;
+        color: #c0392b;
+    }
+}
