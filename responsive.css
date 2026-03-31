@@ -1,0 +1,37 @@
+/* ===== TABLET — min-width: 769px ===== */
+@media (min-width: 769px) {
+    header {
+        margin-top: 0;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 10px);
+    }
+
+    .content-wrapper img {
+        max-width: 400px;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .bio-text {
+        max-width: 600px;
+    }
+}
+
+/* ===== DESKTOP — min-width: 1025px ===== */
+@media (min-width: 1025px) {
+    .card {
+        flex: 1 1 calc(33.333% - 14px);
+    }
+
+    .content-wrapper {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    .content-wrapper img {
+        max-width: 500px;
+        margin: 0;
+    }
+}
